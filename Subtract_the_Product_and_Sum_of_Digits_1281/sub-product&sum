@@ -1,1 +1,25 @@
+package Subtract_the_Product_and_Sum_of_Digits_1281;
+
+public class SubtractProductAndSum {
+
+    public int subtractProductAndSum(int n) {
+        int prod = 1;
+        int sum = 0;
+
+        while (n != 0) {
+            int digit = n % 10;
+            sum += digit;
+            prod *= digit;
+            n /= 10;
+        }
+
+        return prod - sum;
+    }
+
+    public static void main(String[] args) {
+        SubtractProductAndSum obj = new SubtractProductAndSum();
+        int n = 234;
+        System.out.println(obj.subtractProductAndSum(n)); // Output: 15
+    }
+}
 
