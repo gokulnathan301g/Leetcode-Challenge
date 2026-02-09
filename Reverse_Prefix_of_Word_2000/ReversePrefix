@@ -1,0 +1,23 @@
+package Reverse_Prefix_of_Word_2000;
+
+public class ReversePrefix {
+
+    public String reversePrefix(String s, int k) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = k - 1; i >= 0; i--) {
+            sb.append(s.charAt(i));
+        }
+        for (int i = k; i < s.length(); i++) {
+            sb.append(s.charAt(i));
+        }
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        ReversePrefix obj = new ReversePrefix();
+
+        System.out.println(obj.reversePrefix("abcd", 2)); // bacd
+        System.out.println(obj.reversePrefix("xyxz", 3)); // zyxz
+    }
+}
