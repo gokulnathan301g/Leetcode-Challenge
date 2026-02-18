@@ -1,0 +1,23 @@
+package Power_of_Three_326;
+
+public class PowerOfThree {
+
+    public boolean isPowerOfThree(int n) {
+        if (n <= 0) return false;
+
+        while (n % 3 == 0) {
+            n /= 3;
+        }
+
+        return n == 1;
+    }
+
+    public static void main(String[] args) {
+        PowerOfThree obj = new PowerOfThree();
+
+        int n = 27;
+        boolean result = obj.isPowerOfThree(n);
+
+        System.out.println("Is Power of Three: " + result);
+    }
+}
