@@ -1,0 +1,28 @@
+package Number_of_Steps_to_Reduce_a_Number_to_Zero_1342;
+
+public class NumberOfSteps {
+
+    public int numberOfSteps(int num) {
+        int step = 0;
+
+        while (num > 0) {
+            if (num % 2 == 0) {
+                num = num / 2;
+            } else {
+                num = num - 1;
+            }
+            step++;
+        }
+
+        return step;
+    }
+
+    public static void main(String[] args) {
+        NumberOfSteps obj = new NumberOfSteps();
+
+        int num = 14;
+        int result = obj.numberOfSteps(num);
+
+        System.out.println("Total Steps: " + result);
+    }
+}
