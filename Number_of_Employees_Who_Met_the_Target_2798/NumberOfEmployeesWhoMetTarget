@@ -1,0 +1,27 @@
+package Number_of_Employees_Who_Met_the_Target_2798;
+
+public class NumberOfEmployeesWhoMetTarget {
+
+    public int numberOfEmployeesWhoMetTarget(int[] hours, int target) {
+        int total = 0;
+
+        for (int h : hours) {
+            if (h >= target) {
+                total++;
+            }
+        }
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+        NumberOfEmployeesWhoMetTarget obj = new NumberOfEmployeesWhoMetTarget();
+
+        int[] hours = {0, 1, 2, 3, 4};
+        int target = 2;
+
+        int result = obj.numberOfEmployeesWhoMetTarget(hours, target);
+
+        System.out.println("Employees who met target: " + result);
+    }
+}
