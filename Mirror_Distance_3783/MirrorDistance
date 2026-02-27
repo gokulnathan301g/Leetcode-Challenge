@@ -1,0 +1,26 @@
+package Mirror_Distance_3783;
+
+public class MirrorDistance {
+
+    public int mirrorDistance(int n) {
+        int original = n;
+        int rev = 0;
+
+        while (n != 0) {
+            int d = n % 10;
+            rev = rev * 10 + d;
+            n = n / 10;
+        }
+
+        return Math.abs(original - rev);
+    }
+
+    public static void main(String[] args) {
+        MirrorDistance obj = new MirrorDistance();
+
+        int n = 25;
+        int result = obj.mirrorDistance(n);
+
+        System.out.println("Mirror Distance: " + result);
+    }
+}
