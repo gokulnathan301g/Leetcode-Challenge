@@ -1,0 +1,27 @@
+package Minimum_Operations_to_Make_Array_Elements_Divisible_by_3_3190;
+
+public class MinimumOperations3190 {
+
+    public int minimumOperations(int[] nums) {
+        int result = 0;
+
+        for (int num : nums) {
+            int remainder = num % 3;
+
+            if (remainder == 1 || remainder == 2) {
+                result += Math.min(remainder, 3 - remainder);
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        MinimumOperations3190 obj = new MinimumOperations3190();
+
+        int[] nums = {1, 2, 3, 4};
+        int result = obj.minimumOperations(nums);
+
+        System.out.println("Minimum Operations: " + result);
+    }
+}
