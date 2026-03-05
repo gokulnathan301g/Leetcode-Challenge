@@ -1,0 +1,35 @@
+package Minimum_Element_After_Digit_Sum_3300;
+
+public class MinimumElementAfterDigitSum3300 {
+
+    public int minElement(int[] nums) {
+
+        int min = Integer.MAX_VALUE;
+
+        for (int i = 0; i < nums.length; i++) {
+
+            int sum = 0;
+            int n = nums[i];
+
+            while (n > 0) {
+                sum += n % 10;
+                n /= 10;
+            }
+
+            min = Math.min(min, sum);
+        }
+
+        return min;
+    }
+
+    public static void main(String[] args) {
+
+        MinimumElementAfterDigitSum3300 obj = new MinimumElementAfterDigitSum3300();
+
+        int[] nums = {10, 12, 13, 14};
+
+        int result = obj.minElement(nums);
+
+        System.out.println("Minimum Element After Digit Sum: " + result);
+    }
+}
